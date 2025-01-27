@@ -72,17 +72,17 @@ def extract_from_reddit(ds_subreddit):
         'relative_url':permalink,
         'score':score,
         'upvote_ratio':votes,
-        'no.comments':no_of_comments,
+        'no_comments':no_of_comments,
         'subreddit_type':subreddit_type
     }
 
     post_df = pd.DataFrame(post_dict,columns=['id','title','url','content','author','full_name',
-                                              'event_time','relative_url','score','upvote_ratio','no.comments','subreddit_type']
+                                              'event_time','relative_url','score','upvote_ratio','no_comments','subreddit_type']
                                               )
 
     print(post_df)
 
-    post_df.to_csv('reddit.csv',index=True)
+    post_df.to_csv('reddit.csv',index=False)
 
 #producer = kafkaProducer(bootsrap_servers='',
 #                         value_serializers=lambda v: json.dumps(v).encode('utf-8'))
